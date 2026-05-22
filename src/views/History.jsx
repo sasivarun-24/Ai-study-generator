@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useNotesStore } from '../store/useNotesStore';
 import ReactMarkdown from 'react-markdown';
 import toast from 'react-hot-toast';
@@ -20,6 +20,7 @@ import {
 
 export default function History() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { notes, deleteNote, toggleFavorite } = useNotesStore();
 
   const [search, setSearch] = useState('');
